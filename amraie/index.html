@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>سامانه هنرستان شهید سعیدی</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<script>
+    window.confirm("به سامانه هنرستان سعیدی خوش آمدید");
+
+    function checkForm() {
+        var username = document.getElementById("username").value.trim();
+        var phone    = document.getElementById("phone").value.trim();
+        var melli    = document.getElementById("melli").value.trim();
+        var password = document.getElementById("password").value.trim();
+
+        if(username===""){alert("لطفاً نام کاربری خود را وارد کنید");return false;}
+        if(phone===""){alert("لطفاً شماره همراه خود را وارد کنید");return false;}
+        if(melli===""){alert("لطفاً کد ملی خود را وارد کنید");return false;}
+        if(password===""){alert("لطفاً رمز عبور خود را وارد کنید");return false;}
+
+        var gender = document.querySelector('input[name="gender"]:checked');
+        if(!gender){alert("لطفاً جنسیت خود را انتخاب کنید");return false;}
+
+        var ok = confirm("آیا اطلاعات صحیح هستند؟");
+        if(ok){alert("ورود با موفقیت انجام شد");return true;}
+        else{alert("لغو شد");return false;}
+    }
+
+
+    function toggleMenu() {
+        var menu = document.getElementById("menu-popup");
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    function openInfo(infoId) {
+        document.getElementById(infoId).style.display = "block";
+    }
+
+    function closeInfo(infoId) {
+        document.getElementById(infoId).style.display = "none";
+    }
+</script>
+
+<div class="hamburger-menu" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<div id="menu-popup" class="menu-popup">
+    <ul>
+        <li><a href="#" onclick="openInfo('about')"> راه های ارتباطی </a></li>
+        <li><a href="#" onclick="openInfo('wallet')"> مدیریت هنرستان</a></li>
+        <li><a href="#" onclick="openInfo('address')">آدرس</a></li>
+        <li><a href="signup.html">ساخت حساب کاربری</a></li>
+    </ul>
+</div>
+
+<div id="about" class="info-popup">
+    <h3> راه های ارتباطی</h3>
+    <p>کانال ایتا :https://eitaa.com/joinchat/2696806913C166066ee0c
+_________________________
+
+شماره تلفن : 1234567890
+_________________________
+
+آدرس: استان لرستان`` شهرستان خرم آباد`` خیابان علوی کوچه شهید رحیمی هنرستان فنی حرفه ای هیأت امنایی شهید سعیدی</p>
+    <button onclick="closeInfo('about')">بستن</button>
+</div>
+
+<div id="wallet" class="info-popup">
+    <h3> مدیریت هنرستان</h3>
+    <p>مدیر هنرستان: دکتر آقای وحید امرایی </p>
+    <button onclick="closeInfo('wallet')">بستن</button>
+</div>
+
+<div id="address" class="info-popup">
+    <h3>آدرس</h3>
+    <p>استان لرستان ° شهرستان خرم آباد خیابان علوی کوچه شهید رحیمی هنرستان فنی حرفه ای هیأت امنایی شهید سعیدی</p>
+    <button onclick="closeInfo('address')">بستن</button>
+</div>
+
+<div class="form-container">
+    <h2>ورود به سامانه هنرستان</h2>
+    <form action="#" method="get" onsubmit="return checkForm()">
+        <input type="text" id="username" placeholder="نام کاربری">
+        <input type="text" id="phone" placeholder="شماره همراه">
+        <input type="text" id="melli" placeholder="کد ملی">
+        <input type="password" id="password" placeholder="رمز عبور">
+
+        <div class="gender-selection">
+            <label><input type="radio" name="gender" value="خانم"> خانم</label>
+            <label><input type="radio" name="gender" value="آقا"> آقا</label>
+        </div>
+
+        <br>
+
+        <label>سن و پایه تحصیلی خود را انتخاب کنید:</label>
+        <select name="paye" id="paye">
+            <option value="10">15 سال - دهم</option>
+            <option value="11">16-17 سال - یازدهم</option>
+            <option value="12">17-18 سال - دوازدهم</option>
+        </select>
+
+        <div class="buttons">
+            <button type="submit">ورود</button>
+            <button type="reset">پاک کردن</button>
+        </div>
+    </form>
+
+    <div class="signup-link">
+        حساب کاربری ندارید؟ 
+        <a href="signup.html">ساخت حساب کاربری</a>
+    </div>
+</div>
+
+</body>
+</html>

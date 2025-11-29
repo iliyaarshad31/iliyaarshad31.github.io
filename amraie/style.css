@@ -1,0 +1,217 @@
+/* ===================== تنظیمات پایه ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ec06ab, #d51717, #8108eb);
+    background-size: 400% 400%;
+    animation: bgAnimation 15s ease infinite;
+}
+
+@keyframes bgAnimation {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===================== فرم ورود ===================== */
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 380px;
+    text-align: center;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.form-container:hover {
+    transform: scale(1.05);
+}
+
+.form-container h2 {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.form-container input:focus {
+    border-color: #ee0979;
+    box-shadow: 0 0 8px rgba(238, 9, 121, 0.5);
+}
+
+/* ===================== دکمه‌ها ===================== */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.buttons button {
+    width: 48%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.buttons button:hover {
+    transform: scale(1.05);
+}
+
+/* ===================== انتخاب جنسیت ===================== */
+.gender-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.gender-selection label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+}
+
+.gender-selection input[type="radio"] {
+    margin-right: 8px;
+    accent-color: #ee0979;
+}
+
+/* ===================== لینک ساخت حساب ===================== */
+.signup-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+.signup-link a {
+    color: #ee0979;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* ===================== منوی همبرگر ===================== */
+.hamburger-menu {
+    width: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22px;
+    z-index: 200;
+}
+
+.hamburger-menu .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* ===================== پنجره منو ===================== */
+.menu-popup {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 200;
+    min-width: 200px;
+}
+
+.menu-popup ul {
+    list-style: none;
+}
+
+.menu-popup ul li {
+    margin-bottom: 10px;
+}
+
+.menu-popup ul li a {
+    text-decoration: none;
+    color: #ee0979;
+    font-weight: bold;
+    display: block;
+    padding: 5px 0;
+}
+
+.menu-popup ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ===================== پنجره‌های اطلاعات ===================== */
+.info-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 300;
+    width: 300px;
+    text-align: center;
+}
+
+.info-popup h3 {
+    margin-bottom: 10px;
+}
+
+.info-popup p {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.info-popup button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.info-popup button:hover {
+    transform: scale(1.05);
+}
